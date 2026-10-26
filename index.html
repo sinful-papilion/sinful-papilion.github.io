@@ -198,6 +198,41 @@ table.tb{width:100%;min-width:460px;border-collapse:collapse;font-size:15px}
 .tag{font-size:13px;border:1px solid rgba(221,213,225,.35);padding:3px 12px;border-radius:999px}
 .tag.on{border-color:var(--rose);color:var(--paper);background:rgba(208,103,124,.2)}
 
+/* menu items */
+.st.wip{color:var(--ink);background:var(--brass);border-color:var(--brass)}
+.st.maybe{color:var(--paper);border-color:rgba(221,213,225,.6);border-style:dotted}
+.wipband{margin:0 0 18px;border:1px solid var(--brass);background:repeating-linear-gradient(-45deg,rgba(210,178,119,.22) 0 12px,transparent 12px 24px),var(--wall)}
+.wipband-inner{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;padding:14px 18px;background:linear-gradient(90deg,rgba(20,16,23,.92),rgba(20,16,23,.75))}
+.wipband b{font-family:var(--f-display);font-weight:800;color:var(--brass);font-size:20px;letter-spacing:.12em}
+.wipband span{min-width:0;flex:1 1 260px;font-size:14px}
+.fchip{font-size:13px;padding:4px 12px;border:1px solid var(--brass-dim);background:transparent;cursor:pointer;transition:background .2s,border-color .2s}
+.fchip:hover{border-color:var(--brass)}
+.fchip[aria-pressed="true"]{background:var(--wax);border-color:var(--rose);color:var(--paper)}
+.fnote,.fine-note{font-size:13px;margin:0 0 16px;opacity:.8}
+.fine-note{margin:16px 0 0}
+.group{margin-top:22px}
+.ghead{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;border-bottom:1px solid var(--brass-dim);padding-bottom:8px;margin-bottom:14px}
+.ghead h4{font-family:var(--f-display);font-weight:800;color:var(--paper);font-size:18px;margin:0;letter-spacing:.08em}
+.gsub{font-size:13px;opacity:.85}
+.items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.item{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;border:1px solid var(--brass-dim);background:var(--wall);padding:14px;min-width:0}
+.illo{aspect-ratio:3/4;max-width:100%;border:1px dashed var(--brass);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;padding:6px;
+  background:repeating-linear-gradient(135deg,rgba(210,178,119,.10) 0 6px,transparent 6px 12px),var(--wall-2)}
+.illo .pen{width:24px;height:24px;color:var(--brass)}
+.illo b{font-family:var(--f-display);color:var(--paper);font-size:14px;line-height:1.4}
+.illo small{font-family:var(--f-latin);font-style:italic;color:var(--brass);font-size:12px;line-height:1.2}
+.info{min-width:0;display:flex;flex-direction:column;gap:6px}
+.info .no{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;color:var(--brass)}
+.info h4{font-family:var(--f-display);font-weight:800;color:var(--paper);font-size:17px;line-height:1.45;margin:0;overflow-wrap:anywhere}
+.info .en{font-family:var(--f-latin);font-style:italic;color:var(--brass);font-size:14px;margin-top:-4px}
+.info p{margin:0;font-size:14px;line-height:1.7}
+.spec{margin:0;padding-left:1.1em;font-size:13px;line-height:1.7}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.for{font-size:12px;opacity:.85}
+.empty{border:1px dashed var(--brass-dim);padding:14px;margin:14px 0 0;font-size:14px}
+@media (max-width:760px){ .items{grid-template-columns:1fr} }
+@media (max-width:420px){ .item{grid-template-columns:92px minmax(0,1fr);gap:12px} }
+
 /* samples / works */
 .samples{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .sample{aspect-ratio:3/4;max-width:100%;border:1px solid var(--brass-dim);position:relative;overflow:hidden;display:grid;place-items:center;text-align:center;
@@ -494,7 +529,7 @@ footer{padding-block:64px 64px;text-align:center}
         <div class="g"><span class="k">イベント</span><span class="v">異ノ祭</span><span class="st ok">確定</span></div>
         <div class="g"><span class="k">日時・会場・スペース</span><span class="v">―</span><span class="st tbd">未確定</span></div>
         <div class="g"><span class="k">頒布物</span><span class="v">オールキャラグッズ</span><span class="st ok">確定</span></div>
-        <div class="g"><span class="k">お品書き</span><span class="v">―</span><span class="st priv">非公開</span></div>
+        <div class="g"><span class="k">お品書き</span><span class="v">10品を掲載中</span><span class="st wip">イラスト制作中</span><a href="#menu">お品書きを見る</a></div>
         <div class="g"><span class="k">お支払い</span><span class="v">―</span><span class="st tbd">未確定</span></div>
         <div class="g"><span class="k">対象年齢</span><span class="v">―</span><span class="st tbd">未確定</span></div>
         <div class="g"><span class="k">頒布状況</span><span class="v" id="glance-live">当日ここに表示</span><span class="st day" id="glance-live-st">当日更新</span></div>
@@ -519,8 +554,8 @@ footer{padding-block:64px 64px;text-align:center}
         <p class="sub">お知らせと更新履歴です。新しいものが上です。</p>
       </div>
       <ul class="news">
-        <li class="future"><span class="date">――.――.――</span><span class="body">お品書きを公開</span><span class="st priv">非公開</span></li>
-        <li class="future"><span class="date">――.――.――</span><span class="body">スペース番号を掲載</span><span class="st tbd">未確定</span></li>
+                <li class="future"><span class="date">――.――.――</span><span class="body">スペース番号を掲載</span><span class="st tbd">未確定</span></li>
+        <li><span class="date">2026.10.26</span><span class="body">頒布予定のグッズを<a href="#menu">お品書き</a>に掲載しました。イラストはすべて制作中です。</span><span class="st wip">イラスト制作中</span></li>
         <li><span class="date">2026.10.26</span><span class="body">サークル名が「Sinful Papilion」に決まりました。</span><span class="st ok">確定</span></li>
         <li><span class="date">2026.10.26</span><span class="body">紹介ページを公開しました。</span><span class="st ok">公開</span></li>
       </ul>
@@ -588,9 +623,10 @@ footer{padding-block:64px 64px;text-align:center}
         <svg class="keyhole" viewBox="0 0 120 180" aria-hidden="true"><path d="M60 10 a38 38 0 0 1 22 69 L98 170 H22 L38 79 A38 38 0 0 1 60 10 Z" fill="currentColor"/></svg>
         <p class="big">推しは三人三様。<br>グッズは<em>オールキャラ</em>。</p>
         <p>三人の推しはバラバラですが、頒布するのは牢屋敷の少女たち全員分のグッズです。誰の推しも置いていきません。</p>
+        <p><a class="btn primary" href="#menu" style="margin-top:6px">お品書きを見る（イラスト制作中）</a></p>
         <div class="tags">
           <span class="tag on">エマ</span><span class="tag on">マーゴ</span><span class="tag on">シェリー</span>
-          <span class="tag">ほか全キャラ</span><span class="tag">ナノマゴもあるかも</span>
+          <span class="tag">ほか全キャラ</span><span class="tag">ナノマゴもあります</span>
         </div>
       </div>
       <div class="panels">
@@ -603,43 +639,161 @@ footer{padding-block:64px 64px;text-align:center}
           </div>
           <div class="live-note"><span>最終更新</span><span id="live-updated">まだ更新されていません</span></div>
         </div>
-        <div class="panel wide">
-          <h3>お品書き <small>Menu</small> <span class="st priv">非公開</span></h3>
-          <p>品目と価格は、お品書きの完成後に公開します。</p>
-          <div class="filters" aria-label="推しで探す（公開後に使えます）">
+        <div class="panel wide" id="menu">
+          <h3>お品書き <small>Menu</small> <span class="st ok">公開</span></h3>
+          <div class="wipband" role="note">
+            <div class="wipband-inner">
+              <b>すべてイラスト制作中</b>
+              <span>掲載しているグッズは、どれもまだイラストを描いている途中です。絵柄・仕様・価格・頒布数は変わる場合があります。</span>
+            </div>
+          </div>
+          <div class="filters" role="group" aria-label="推しで探す">
             <span class="lbl">推しで探す</span>
-            <button class="mini" type="button" disabled>エマ</button>
-            <button class="mini" type="button" disabled>マーゴ</button>
-            <button class="mini" type="button" disabled>シェリー</button>
-            <button class="mini" type="button" disabled>全キャラ</button>
-            <span class="st tbd">公開後に使えます</span>
+            <button class="fchip" type="button" data-f="" aria-pressed="true">すべて</button><button class="fchip" type="button" data-f="アリサ" aria-pressed="false">アリサ</button><button class="fchip" type="button" data-f="ナノカ" aria-pressed="false">ナノカ</button><button class="fchip" type="button" data-f="マーゴ" aria-pressed="false">マーゴ</button><button class="fchip" type="button" data-f="エマ" aria-pressed="false">エマ</button><button class="fchip" type="button" data-f="ヒロ" aria-pressed="false">ヒロ</button><button class="fchip" type="button" data-f="メルル" aria-pressed="false">メルル</button><button class="fchip" type="button" data-f="ハンナ" aria-pressed="false">ハンナ</button><button class="fchip" type="button" data-f="シェリー" aria-pressed="false">シェリー</button><button class="fchip" type="button" data-f="レイア" aria-pressed="false">レイア</button><button class="fchip" type="button" data-f="ミリア" aria-pressed="false">ミリア</button><button class="fchip" type="button" data-f="ノア" aria-pressed="false">ノア</button><button class="fchip" type="button" data-f="アンアン" aria-pressed="false">アンアン</button><button class="fchip" type="button" data-f="ココ" aria-pressed="false">ココ</button>
           </div>
-          <div class="table-scroll">
-            <table class="tb">
-              <thead><tr><th>No.</th><th>品目</th><th>キャラ</th><th>価格</th><th>状況</th></tr></thead>
-              <tbody>
-                <tr><td class="num">01</td><td><span class="blk" style="width:8em"></span></td><td><span class="blk" style="width:4em"></span></td><td><span class="st tbd">未確定</span></td><td><span class="st priv">非公開</span></td></tr>
-                <tr><td class="num">02</td><td><span class="blk" style="width:6em"></span></td><td><span class="blk" style="width:5em"></span></td><td><span class="st tbd">未確定</span></td><td><span class="st priv">非公開</span></td></tr>
-                <tr><td class="num">03</td><td><span class="blk" style="width:9em"></span></td><td><span class="blk" style="width:3em"></span></td><td><span class="st tbd">未確定</span></td><td><span class="st priv">非公開</span></td></tr>
-              </tbody>
-            </table>
+          <p class="fnote">全キャラ向けのグッズは、どの推しを選んでも表示されます。</p>
+
+          <div class="group">
+            <div class="ghead"><h4>サークル頒布物</h4><span class="gsub">三人の共犯者による頒布物</span></div>
+            <div class="items">
+          <article class="item" data-chars="アリサ">
+            <div class="illo" aria-label="イラスト制作中"><svg class="pen" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16l-1 4zM14 6l3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><b>イラスト制作中</b><small>Illustration in progress</small></div>
+            <div class="info">
+              <div class="no">01</div>
+              <h4>紫藤アリサ ライターステッカー〈点火〉</h4>
+              <div class="en">Lighter Sticker</div>
+              <p>ライターに巻く縦長ステッカーです。表は通常のアリサ、裏返すと魔女化したアリサになります。</p>
+              <ul class="spec"><li>表：通常／裏：魔女化</li><li>ライターの側面まで続くデザイン</li></ul>
+              <div class="pills"><span class="st wip">イラスト制作中</span><span class="st tbd">価格 未定</span><span class="st tbd">頒布数 未定</span></div>
+              <div class="for">対象：アリサ</div>
+            </div>
+          </article>
+          <article class="item" data-chars="ナノカ マーゴ エマ ヒロ メルル ハンナ シェリー">
+            <div class="illo" aria-label="イラスト制作中"><svg class="pen" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16l-1 4zM14 6l3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><b>イラスト制作中</b><small>Illustration in progress</small></div>
+            <div class="info">
+              <div class="no">02</div>
+              <h4>フリフリアクリルキーホルダー（全5種予定）</h4>
+              <div class="en">Acrylic Keyholder</div>
+              <p>それぞれのカップリングの特徴を表現した、フリフリのアクリルキーホルダーです。並べてもかわいいデザインです。</p>
+              <ul class="spec"><li>ナノカ×マーゴ（ナノマゴ）</li><li>エマ×ヒロ（エマヒロ）</li><li>？？？×メルル</li><li>ハンナ×シェリー（ハンシェリ）</li><li>5種目は後日公開</li><li>小さめサイズ想定</li></ul>
+              <div class="pills"><span class="st wip">イラスト制作中</span><span class="st tbd">価格 未定</span><span class="st tbd">頒布数 未定</span></div>
+              <div class="for">対象：ナノマゴ、エマヒロ、？？？×メルル、ハンシェリ ほか</div>
+            </div>
+          </article>
+          <article class="item" data-chars="all">
+            <div class="illo" aria-label="イラスト制作中"><svg class="pen" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16l-1 4zM14 6l3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><b>イラスト制作中</b><small>Illustration in progress</small></div>
+            <div class="info">
+              <div class="no">03</div>
+              <h4>全員集合ちまっとトートバッグ</h4>
+              <div class="en">Mini Tote Bag</div>
+              <p>全キャラクターをちまっと散らした、普段使いしやすいモノトーン調のトートバッグです。</p>
+              <ul class="spec"><li>モノトーン調</li></ul>
+              <div class="pills"><span class="st wip">イラスト制作中</span><span class="st tbd">価格 未定</span><span class="st tbd">頒布数 未定</span></div>
+              <div class="for">対象：全キャラ</div>
+            </div>
+          </article>
+          <article class="item" data-chars="all">
+            <div class="illo" aria-label="イラスト制作中"><svg class="pen" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16l-1 4zM14 6l3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><b>イラスト制作中</b><small>Illustration in progress</small></div>
+            <div class="info">
+              <div class="no">04</div>
+              <h4>全員集合ちまっとステッカー（全キャラ）</h4>
+              <div class="en">Mini Sticker</div>
+              <p>全キャラクターをちまっと描いたステッカーです。ノートやスマホなど、身の回りのものに貼りやすいデザインです。</p>
+              <ul class="spec"><li>全キャラを1枚ずつ頒布予定</li><li>サイズ：未定</li></ul>
+              <div class="pills"><span class="st wip">イラスト制作中</span><span class="st tbd">価格 未定</span><span class="st tbd">頒布数 未定</span></div>
+              <div class="for">対象：全キャラ</div>
+            </div>
+          </article>
+          <article class="item" data-chars="アリサ">
+            <div class="illo" aria-label="イラスト制作中"><svg class="pen" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16l-1 4zM14 6l3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><b>イラスト制作中</b><small>Illustration in progress</small></div>
+            <div class="info">
+              <div class="no">05</div>
+              <h4>紫藤アリサ 電子用汎用ステッカー〈保温〉</h4>
+              <div class="en">Device Sticker</div>
+              <p>電子機器に貼れる縦長の汎用ステッカーです。両手で小さな火を包むアリサを描きます。</p>
+              <ul class="spec"><li>通常／侵食の2種</li><li>縦長・角丸</li><li>サイズ：未定</li></ul>
+              <div class="pills"><span class="st wip">イラスト制作中</span><span class="st tbd">価格 未定</span><span class="st tbd">頒布数 未定</span></div>
+              <div class="for">対象：アリサ</div>
+            </div>
+          </article>
+            </div>
           </div>
+
+          <div class="group">
+            <div class="ghead"><h4>ゆづき個人制作</h4><span class="st maybe">余力次第</span><span class="gsub">ゆづきの余力次第で頒布するかもしれないグッズです</span></div>
+            <div class="items">
+          <article class="item" data-chars="レイア">
+            <div class="illo" aria-label="イラスト制作中"><svg class="pen" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16l-1 4zM14 6l3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><b>イラスト制作中</b><small>Illustration in progress</small></div>
+            <div class="info">
+              <div class="no">Y-01</div>
+              <h4>レイア 鏡缶バッジ</h4>
+              <div class="en">Mirror Can Badge</div>
+              <p>裏面が鏡になっている缶バッジです。</p>
+              <ul class="spec"><li>直径 約76mm</li><li>裏面：鏡</li></ul>
+              <div class="pills"><span class="st wip">イラスト制作中</span><span class="st tbd">価格 未定</span><span class="st tbd">頒布数 未定</span><span class="st maybe">余力次第</span></div>
+              <div class="for">対象：レイア</div>
+            </div>
+          </article>
+          <article class="item" data-chars="ミリア">
+            <div class="illo" aria-label="イラスト制作中"><svg class="pen" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16l-1 4zM14 6l3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><b>イラスト制作中</b><small>Illustration in progress</small></div>
+            <div class="info">
+              <div class="no">Y-02</div>
+              <h4>ミリア ヘアバレッタ</h4>
+              <div class="en">Hair Barrette</div>
+              <p>髪に付けられるバレッタです。</p>
+              <ul class="spec"><li>長方形 約85×25mm</li><li>楕円 約80×30mm</li></ul>
+              <div class="pills"><span class="st wip">イラスト制作中</span><span class="st tbd">価格 未定</span><span class="st tbd">頒布数 未定</span><span class="st maybe">余力次第</span></div>
+              <div class="for">対象：ミリア</div>
+            </div>
+          </article>
+          <article class="item" data-chars="ノア アンアン">
+            <div class="illo" aria-label="イラスト制作中"><svg class="pen" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16l-1 4zM14 6l3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><b>イラスト制作中</b><small>Illustration in progress</small></div>
+            <div class="info">
+              <div class="no">Y-03</div>
+              <h4>ノア × アンアン ペアアクリルキーホルダー</h4>
+              <div class="en">Pair Acrylic Keyholder</div>
+              <p>2つ並べると絵がつながる、ペアのアクリルキーホルダーです。</p>
+              <ul class="spec"><li>約70mm（1個あたり）</li><li>出ない場合は「ノア ラウンド缶」（直径65×高さ30mm）に変更</li></ul>
+              <div class="pills"><span class="st wip">イラスト制作中</span><span class="st tbd">価格 未定</span><span class="st tbd">頒布数 未定</span><span class="st maybe">余力次第</span></div>
+              <div class="for">対象：ノア、アンアン</div>
+            </div>
+          </article>
+          <article class="item" data-chars="アンアン">
+            <div class="illo" aria-label="イラスト制作中"><svg class="pen" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16l-1 4zM14 6l3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><b>イラスト制作中</b><small>Illustration in progress</small></div>
+            <div class="info">
+              <div class="no">Y-04</div>
+              <h4>アンアン メモ帳・スケッチ帳</h4>
+              <div class="en">Memo Pad / Sketchbook</div>
+              <p>表紙にアンアンを描いたメモ帳とスケッチ帳です。</p>
+              <ul class="spec"><li>メモ帳 約100×150mm（A6前後）</li><li>スケッチ帳 約120×170mm（B6前後）</li></ul>
+              <div class="pills"><span class="st wip">イラスト制作中</span><span class="st tbd">価格 未定</span><span class="st tbd">頒布数 未定</span><span class="st maybe">余力次第</span></div>
+              <div class="for">対象：アンアン</div>
+            </div>
+          </article>
+          <article class="item" data-chars="ココ">
+            <div class="illo" aria-label="イラスト制作中"><svg class="pen" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16l-1 4zM14 6l3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><b>イラスト制作中</b><small>Illustration in progress</small></div>
+            <div class="info">
+              <div class="no">Y-05</div>
+              <h4>ココ 放送中風アクリルメモスタンド</h4>
+              <div class="en">On Air Memo Stand</div>
+              <p>「ON AIR」の放送中ランプ風デザインの、自立するアクリルメモスタンドです。</p>
+              <ul class="spec"><li>約64mm角</li></ul>
+              <div class="pills"><span class="st wip">イラスト制作中</span><span class="st tbd">価格 未定</span><span class="st tbd">頒布数 未定</span><span class="st maybe">余力次第</span></div>
+              <div class="for">対象：ココ</div>
+            </div>
+          </article>
+            </div>
+          </div>
+          <p class="empty" id="menu-empty" hidden>この推しのグッズは、今のところ掲載していません。全キャラ向けのグッズをご覧ください。</p>
+          <p class="fine-note">※画像はまだありません。イラストが完成したものから順に掲載します。</p>
         </div>
-        <div class="panel">
+        <div class="panel wide">
           <h3>特典・ノベルティ <small>Bonus</small></h3>
           <dl class="kv">
             <dt>購入特典</dt><dd><span class="val">―</span><span class="st tbd">未確定</span></dd>
             <dt>無料配布</dt><dd><span class="val">―</span><span class="st tbd">未確定</span></dd>
             <dt>配布条件</dt><dd><span class="val">―</span><span class="st tbd">未確定</span></dd>
           </dl>
-        </div>
-        <div class="panel">
-          <h3>サンプル <small>Exhibits</small> <span class="st priv">非公開</span></h3>
-          <div class="samples">
-            <div class="sample"><div><svg aria-hidden="true"><use href="#lock"/></svg>押収中</div></div>
-            <div class="sample"><div><svg aria-hidden="true"><use href="#lock"/></svg>押収中</div></div>
-            <div class="sample"><div><svg aria-hidden="true"><use href="#lock"/></svg>押収中</div></div>
-          </div>
         </div>
       </div>
     </section>
@@ -825,8 +979,8 @@ footer{padding-block:64px 64px;text-align:center}
         <svg class="fleuron" aria-hidden="true"><use href="#fleuron"/></svg>
       </div>
       <div class="faq">
-        <details open><summary>自分の推しのグッズはありますか。</summary><div class="ans"><span>全キャラ分を用意する予定です。品目はお品書きの公開時にお知らせします。</span><span class="st priv">お品書き非公開</span></div></details>
-        <details><summary>ナノマゴのグッズはありますか。</summary><div class="ans"><span>いろはしゆづきが前向きに検討しています。</span><span class="st tbd">未確定</span></div></details>
+        <details open><summary>自分の推しのグッズはありますか。</summary><div class="ans"><span>全キャラ向けのトートバッグとステッカーを予定しています。お品書きの「推しで探す」で、推しごとのグッズも探せます。イラストはすべて制作中です。</span><span class="st wip">イラスト制作中</span></div></details>
+        <details><summary>ナノマゴのグッズはありますか。</summary><div class="ans"><span>フリフリアクリルキーホルダーに、ナノマゴを予定しています。</span><span class="st wip">イラスト制作中</span></div></details>
         <details><summary>キャッシュレス決済は使えますか。</summary><div class="ans"><span>決まりしだい、参加情報に掲載します。</span><span class="st tbd">未確定</span></div></details>
         <details><summary>取り置きや通販はありますか。</summary><div class="ans"><span>どちらも検討中です。ルールの欄に掲載します。</span><span class="st tbd">未確定</span></div></details>
         <details><summary>ネタバレは含まれますか。</summary><div class="ans"><span>含まれる可能性があります。範囲は決まりしだい、ページ冒頭に掲載します。</span><span class="st tbd">未確定</span></div></details>
@@ -884,6 +1038,23 @@ var SNS = {
     .then(function(r){ return r.ok ? r.json() : null; })
     .then(function(d){ if (d && typeof d === 'object') { STATE = d; renderLive(); } })
     .catch(function(){});
+
+  /* ---- お品書き：推しで探す ---- */
+  var fchips = document.querySelectorAll('.fchip'), items = document.querySelectorAll('.item');
+  fchips.forEach(function(b){
+    b.addEventListener('click', function(){
+      var f = b.dataset.f;
+      fchips.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      var shown = 0, specific = 0;
+      items.forEach(function(it){
+        var cs = it.dataset.chars.split(' ');
+        var all = cs.indexOf('all') >= 0, hit = !f || all || cs.indexOf(f) >= 0;
+        it.hidden = !hit; if (hit) shown++; if (hit && !all && f) specific++;
+      });
+      document.querySelectorAll('.group').forEach(function(g){ g.hidden = !g.querySelector('.item:not([hidden])'); });
+      $('menu-empty').hidden = !(f && specific === 0);
+    });
+  });
 
   /* ---- SNS欄 ---- */
   document.querySelectorAll('[data-sns]').forEach(function(box){
