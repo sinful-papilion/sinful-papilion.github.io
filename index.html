@@ -240,9 +240,9 @@ table.tb{width:100%;min-width:460px;border-collapse:collapse;font-size:15px}
 .spec{margin:0;padding-left:1.1em;font-size:13px;line-height:1.7}
 .pills{display:flex;flex-wrap:wrap;gap:6px}
 .for{font-size:12px;opacity:.85}
-.empty{border:1px dashed var(--brass-dim);padding:14px;margin:14px 0 0;font-size:14px}
+.menu-empty{border:1px dashed var(--brass-dim);padding:14px;margin:14px 0 0;font-size:14px}
 @media (max-width:760px){ .items{grid-template-columns:1fr} }
-@media (max-width:420px){ .item{grid-template-columns:92px minmax(0,1fr);gap:12px} }
+@media (max-width:420px){ .item{grid-template-columns:92px minmax(0,1fr);gap:12px} .illo b{font-size:12px;word-break:keep-all} .illo small{font-size:10px} }
 
 .teasers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:10px}
 .teaser{margin:0;position:relative;min-width:0;border:1px solid var(--brass-dim);background:var(--wall);padding:8px}
@@ -293,7 +293,7 @@ table.tb{width:100%;min-width:460px;border-collapse:collapse;font-size:15px}
 .fhead > div{min-width:0}
 .fid{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;color:var(--ink-soft);padding-left:26px}
 .role{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--wax);border:1px solid var(--wax);padding:0 8px}
-.fname{font-family:var(--f-display);font-weight:800;font-size:clamp(24px,2.6vw,30px);margin:6px 0 0;line-height:1.3;color:var(--ink);overflow-wrap:anywhere}
+.fname{font-family:var(--f-display);font-weight:800;font-size:clamp(22px,2.2vw,26px);margin:6px 0 0;line-height:1.3;color:var(--ink);overflow-wrap:anywhere}
 .alias{display:block;font-size:13px;color:var(--ink-soft);margin-top:2px;font-family:var(--f-body);font-weight:500}
 .redact{display:inline-block;background:var(--ink);color:transparent;user-select:none;padding:0 .15em;border:0;cursor:pointer;font:inherit;line-height:1.2}
 .redact.shake{animation:shake .4s}
@@ -527,7 +527,8 @@ footer{padding-block:64px 64px;text-align:center}
           </div>
           <p class="lead">推しの違う三人が、<b>全キャラ分のグッズ</b>を作っています。絵を描き始めたばかりの二人と、描き続けてきた一人。推しへの愛による魔女化は、三人とも止まりません。</p>
           <div class="cta">
-            <a class="btn primary" href="#court">参加情報を見る</a>
+            <a class="btn primary" href="#menu">お品書きを見る</a>
+            <a class="btn" href="#court">参加情報を見る</a>
             <a class="btn" href="#trial">推し診断をする</a>
           </div>
         </div>
@@ -650,15 +651,6 @@ footer{padding-block:64px 64px;text-align:center}
         </div>
       </div>
       <div class="panels">
-        <div class="panel wide" id="live">
-          <h3>当日の頒布状況 <small>Live Status</small> <span class="st day">当日更新</span></h3>
-          <div class="live">
-            <div><div class="k">売り切れ</div><div class="v" id="live-soldout">―</div></div>
-            <div><div class="k">残りわずか</div><div class="v" id="live-few">―</div></div>
-            <div><div class="k">共犯者からひとこと</div><div class="v" id="live-note">―</div></div>
-          </div>
-          <div class="live-note"><span>最終更新</span><span id="live-updated">まだ更新されていません</span></div>
-        </div>
         <div class="panel wide" id="menu">
           <h3>お品書き <small>Menu</small> <span class="st ok">公開</span></h3>
           <div class="wipband" role="note">
@@ -674,7 +666,7 @@ footer{padding-block:64px 64px;text-align:center}
             </figure>
             <figure class="teaser">
               <a href="images/lineup-yuzuki.jpg" target="_blank" rel="noopener"><img src="images/lineup-yuzuki.jpg" width="1536" height="1024" loading="lazy" alt="ゆづき個人制作の予告画像。鏡缶バッジ、ヘアバレッタ、ペアアクリルキーホルダー、メモ帳・スケッチ帳、放送中風アクリルメモスタンド"><span class="tag-img">イメージ</span></a>
-              <figcaption>ゆづき個人制作 予告（Y-01〜Y-05・余力次第）</figcaption>
+              <figcaption>いろはしゆづき 個人制作 予告（Y-01〜Y-05・余力次第）</figcaption>
             </figure>
           </div>
           <p class="fine-note" style="margin:0 0 18px">※画像はイメージです。イラストはすべて制作中のため、実際の絵柄・仕様とは異なります。画像を押すと大きく表示されます。</p>
@@ -751,7 +743,7 @@ footer{padding-block:64px 64px;text-align:center}
           </div>
 
           <div class="group">
-            <div class="ghead"><h4>ゆづき個人制作</h4><span class="st maybe">余力次第</span><span class="gsub">ゆづきの余力次第で頒布するかもしれないグッズです</span></div>
+            <div class="ghead"><h4>いろはしゆづき 個人制作</h4><span class="st maybe">余力次第</span><span class="gsub">いろはしゆづきの余力次第で頒布するかもしれないグッズです</span></div>
             <div class="items">
           <article class="item" data-chars="レイア">
             <div class="illo" aria-label="イラスト制作中"><svg class="pen" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16l-1 4zM14 6l3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><b>イラスト制作中</b><small>Illustration in progress</small></div>
@@ -815,8 +807,17 @@ footer{padding-block:64px 64px;text-align:center}
           </article>
             </div>
           </div>
-          <p class="empty" id="menu-empty" hidden>この推しのグッズは、今のところ掲載していません。全キャラ向けのグッズをご覧ください。</p>
+          <p class="menu-empty" id="menu-empty" hidden>この推しのグッズは、今のところ掲載していません。全キャラ向けのグッズをご覧ください。</p>
           <p class="fine-note">※イラストが完成したものから順に、各グッズの画像を掲載します。</p>
+        </div>
+        <div class="panel wide" id="live">
+          <h3>当日の頒布状況 <small>Live Status</small> <span class="st day">当日更新</span></h3>
+          <div class="live">
+            <div><div class="k">売り切れ</div><div class="v" id="live-soldout">―</div></div>
+            <div><div class="k">残りわずか</div><div class="v" id="live-few">―</div></div>
+            <div><div class="k">共犯者からひとこと</div><div class="v" id="live-note">―</div></div>
+          </div>
+          <div class="live-note"><span>最終更新</span><span id="live-updated">まだ更新されていません</span></div>
         </div>
         <div class="panel wide">
           <h3>特典・ノベルティ <small>Bonus</small></h3>
@@ -902,15 +903,19 @@ footer{padding-block:64px 64px;text-align:center}
         <p class="q">証言台へどうぞ。あなたの推しは誰ですか。</p>
         <div class="chips" role="group" aria-label="推しを選ぶ">
           <button class="chip" type="button" data-oshi="エマ" aria-pressed="false">エマ</button>
-          <button class="chip" type="button" data-oshi="マーゴ" aria-pressed="false">マーゴ</button>
-          <button class="chip" type="button" data-oshi="ナノカ" aria-pressed="false">ナノカ</button>
-          <button class="chip" type="button" data-oshi="シェリー" aria-pressed="false">シェリー</button>
           <button class="chip" type="button" data-oshi="ヒロ" aria-pressed="false">ヒロ</button>
-          <button class="chip" type="button" data-oshi="ハンナ" aria-pressed="false">ハンナ</button>
-          <button class="chip" type="button" data-oshi="ココ" aria-pressed="false">ココ</button>
+          <button class="chip" type="button" data-oshi="アリサ" aria-pressed="false">アリサ</button>
+          <button class="chip" type="button" data-oshi="ナノカ" aria-pressed="false">ナノカ</button>
+          <button class="chip" type="button" data-oshi="マーゴ" aria-pressed="false">マーゴ</button>
           <button class="chip" type="button" data-oshi="メルル" aria-pressed="false">メルル</button>
-          <button class="chip" type="button" data-oshi="ほか" aria-pressed="false">ほかの子</button>
-          <button class="chip" type="button" data-oshi="箱" aria-pressed="false">全員</button>
+          <button class="chip" type="button" data-oshi="ハンナ" aria-pressed="false">ハンナ</button>
+          <button class="chip" type="button" data-oshi="シェリー" aria-pressed="false">シェリー</button>
+          <button class="chip" type="button" data-oshi="レイア" aria-pressed="false">レイア</button>
+          <button class="chip" type="button" data-oshi="ミリア" aria-pressed="false">ミリア</button>
+          <button class="chip" type="button" data-oshi="ノア" aria-pressed="false">ノア</button>
+          <button class="chip" type="button" data-oshi="アンアン" aria-pressed="false">アンアン</button>
+          <button class="chip" type="button" data-oshi="ココ" aria-pressed="false">ココ</button>
+          <button class="chip" type="button" data-oshi="箱" aria-pressed="false">全員（箱推し）</button>
         </div>
         <div class="verdict" id="verdict" aria-live="polite">
           <svg class="gavel" viewBox="0 0 100 100" aria-hidden="true">
@@ -1025,7 +1030,7 @@ footer{padding-block:64px 64px;text-align:center}
         <dt>イベント</dt><dd>異ノ祭</dd>
         <dt>サークル名</dt><dd>Sinful Papilion <span class="st ok">確定</span></dd>
         <dt>スペース</dt><dd>― <span class="st tbd">未確定</span></dd>
-        <dt>お品書き</dt><dd>― <span class="st priv">非公開</span></dd>
+        <dt>お品書き</dt><dd><a href="#menu">公開中</a> <span class="st wip">イラスト制作中</span></dd>
       </dl>
       <p class="fine">本ページは『魔法少女ノ魔女裁判』の非公式ファン活動によるものです。公式とは関係ありません。</p>
     </footer>
@@ -1124,12 +1129,29 @@ var SNS = {
     ch.addEventListener('click', function(){
       chips.forEach(function(c){ c.setAttribute('aria-pressed', c === ch ? 'true' : 'false'); });
       var o = ch.dataset.oshi;
-      var r = MAP[o] || { who:'all', head:'判決：<em>'+(o === 'ほか' ? 'あなたの推し' : o)+'</em>のグッズも用意します。', body:'三人の推しとは違っても、全キャラ分を作っています。' };
+      var r = MAP[o] || { who:'all', head:'判決：<em>'+o+'</em>推しも、全員有罪です。', body:'三人の推しとは違っても、全キャラ分のグッズを作っています。' };
+      /* お品書きから、この推しのグッズを数える */
+      var own = 0, maybe = 0;
+      if (o !== '箱') items.forEach(function(it){
+        var cs = it.dataset.chars.split(' ');
+        if (cs.indexOf(o) >= 0) { own++; if (it.closest('.group') && it.querySelector('.st.maybe')) maybe++; }
+      });
+      var goods = o === '箱'
+        ? 'お品書きには全部で' + items.length + '品あります。'
+        : (own ? o + 'のグッズは' + own + '品あります' + (maybe ? '（うち' + maybe + '品は余力次第）' : '') + '。全キャラ向けのトートバッグとステッカーにも入ります。'
+               : o + '専用のグッズはまだありませんが、全キャラ向けのトートバッグとステッカーに入ります。');
       $('v-head').innerHTML = r.head;
-      $('v-body').innerHTML = r.body + ' <a href="#' + (r.who === 'all' ? 'zukan' : r.who) + '">記録を見る</a>';
+      $('v-body').innerHTML = r.body + ' ' + goods +
+        ' <a href="#menu" data-go="' + (o === '箱' ? '' : o) + '">お品書きで見る</a>' +
+        (r.who === 'all' ? '' : '／<a href="#' + r.who + '">共犯者の記録を見る</a>');
       files.forEach(function(f){ f.classList.toggle('match', r.who === 'all' || f.dataset.member === r.who); });
       var v = $('verdict'); v.classList.remove('hit'); void v.offsetWidth; v.classList.add('hit');
     });
+  });
+
+  $('v-body').addEventListener('click', function(e){
+    var a = e.target.closest('a[data-go]'); if (!a) return;
+    var b = document.querySelector('.fchip[data-f="' + a.dataset.go + '"]'); if (b) b.click();
   });
 
   /* ---- ナビの現在地 ---- */
