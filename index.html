@@ -233,6 +233,15 @@ table.tb{width:100%;min-width:460px;border-collapse:collapse;font-size:15px}
 @media (max-width:760px){ .items{grid-template-columns:1fr} }
 @media (max-width:420px){ .item{grid-template-columns:92px minmax(0,1fr);gap:12px} }
 
+.teasers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:10px}
+.teaser{margin:0;position:relative;min-width:0;border:1px solid var(--brass-dim);background:var(--wall);padding:8px}
+.teaser img{display:block;width:100%;height:auto}
+.teaser a{display:block}
+.teaser a:hover img{opacity:.9}
+.tag-img{position:absolute;bottom:62px;right:16px;background:var(--brass);color:var(--ink);font-size:12px;font-weight:700;letter-spacing:.1em;padding:1px 10px}
+.teaser figcaption{font-size:13px;padding:8px 2px 2px;line-height:1.6}
+.teaser figcaption small{opacity:.8}
+@media (max-width:760px){ .teasers{grid-template-columns:1fr} }
 /* samples / works */
 .samples{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .sample{aspect-ratio:3/4;max-width:100%;border:1px solid var(--brass-dim);position:relative;overflow:hidden;display:grid;place-items:center;text-align:center;
@@ -647,6 +656,19 @@ footer{padding-block:64px 64px;text-align:center}
               <span>掲載しているグッズは、どれもまだイラストを描いている途中です。絵柄・仕様・価格・頒布数は変わる場合があります。</span>
             </div>
           </div>
+          <div class="teasers">
+            <figure class="teaser">
+              <a href="images/lineup-main.jpg" target="_blank" rel="noopener"><img src="images/lineup-main.jpg" width="1536" height="1024" loading="lazy" alt="サークル頒布物の予告画像。ライターステッカー、フリフリアクリルキーホルダー、全員集合ちまっとトートバッグ、全員集合ちまっとステッカー"></a>
+              <span class="tag-img">イメージ</span>
+              <figcaption>サークル頒布物 予告（01〜04）<br><small>※画像内のサークル名「三人ノ共犯」は決定前の仮の名前です。</small></figcaption>
+            </figure>
+            <figure class="teaser">
+              <a href="images/lineup-yuzuki.jpg" target="_blank" rel="noopener"><img src="images/lineup-yuzuki.jpg" width="1536" height="1024" loading="lazy" alt="ゆづき個人制作の予告画像。鏡缶バッジ、ヘアバレッタ、ペアアクリルキーホルダー、メモ帳・スケッチ帳、放送中風アクリルメモスタンド"></a>
+              <span class="tag-img">イメージ</span>
+              <figcaption>ゆづき個人制作 予告（Y-01〜Y-05・余力次第）</figcaption>
+            </figure>
+          </div>
+          <p class="fine-note" style="margin:0 0 18px">※画像はイメージです。イラストはすべて制作中のため、実際の絵柄・仕様とは異なります。画像を押すと大きく表示されます。</p>
           <div class="filters" role="group" aria-label="推しで探す">
             <span class="lbl">推しで探す</span>
             <button class="fchip" type="button" data-f="" aria-pressed="true">すべて</button><button class="fchip" type="button" data-f="アリサ" aria-pressed="false">アリサ</button><button class="fchip" type="button" data-f="ナノカ" aria-pressed="false">ナノカ</button><button class="fchip" type="button" data-f="マーゴ" aria-pressed="false">マーゴ</button><button class="fchip" type="button" data-f="エマ" aria-pressed="false">エマ</button><button class="fchip" type="button" data-f="ヒロ" aria-pressed="false">ヒロ</button><button class="fchip" type="button" data-f="メルル" aria-pressed="false">メルル</button><button class="fchip" type="button" data-f="ハンナ" aria-pressed="false">ハンナ</button><button class="fchip" type="button" data-f="シェリー" aria-pressed="false">シェリー</button><button class="fchip" type="button" data-f="レイア" aria-pressed="false">レイア</button><button class="fchip" type="button" data-f="ミリア" aria-pressed="false">ミリア</button><button class="fchip" type="button" data-f="ノア" aria-pressed="false">ノア</button><button class="fchip" type="button" data-f="アンアン" aria-pressed="false">アンアン</button><button class="fchip" type="button" data-f="ココ" aria-pressed="false">ココ</button>
@@ -785,7 +807,7 @@ footer{padding-block:64px 64px;text-align:center}
             </div>
           </div>
           <p class="empty" id="menu-empty" hidden>この推しのグッズは、今のところ掲載していません。全キャラ向けのグッズをご覧ください。</p>
-          <p class="fine-note">※画像はまだありません。イラストが完成したものから順に掲載します。</p>
+          <p class="fine-note">※イラストが完成したものから順に、各グッズの画像を掲載します。</p>
         </div>
         <div class="panel wide">
           <h3>特典・ノベルティ <small>Bonus</small></h3>
