@@ -149,7 +149,8 @@ h1.cname{font-family:var(--f-latin);font-style:italic;font-weight:600;letter-spa
 .g .k{font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--brass)}
 .g .v{font-family:var(--f-display);font-weight:700;color:var(--paper);font-size:17px;line-height:1.5;overflow-wrap:anywhere}
 .g .st{align-self:flex-start}
-.g a{font-size:13px;margin-top:auto}
+.g a{font-size:13px}
+.g a:first-of-type{margin-top:auto}
 
 /* ===== band ===== */
 .band{border-block:1px solid var(--brass-dim);background:var(--wall-2);overflow:hidden;margin-top:40px}
@@ -253,6 +254,14 @@ table.tb{width:100%;min-width:460px;border-collapse:collapse;font-size:15px}
 .teaser figcaption{font-size:13px;padding:8px 2px 2px;line-height:1.6}
 .teaser figcaption small{opacity:.8}
 @media (max-width:760px){ .teasers{grid-template-columns:1fr} }
+.survey{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between;border-color:var(--rose);background:linear-gradient(135deg,rgba(125,34,54,.35),transparent 70%),var(--wall-2)}
+.survey-body{flex:1 1 380px;min-width:0}
+.survey-k{font-family:var(--f-latin);font-style:italic;color:var(--brass);font-size:17px}
+.survey h3{margin:2px 0 8px}
+.survey p{margin:0 0 8px;font-size:15px}
+.survey ul{margin:0;padding-left:1.1em;font-size:14px}
+.survey b{color:var(--paper)}
+.survey .btn{flex:0 0 auto}
 /* samples / works */
 .samples{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .sample{aspect-ratio:3/4;max-width:100%;border:1px solid var(--brass-dim);position:relative;overflow:hidden;display:grid;place-items:center;text-align:center;
@@ -528,6 +537,7 @@ footer{padding-block:64px 64px;text-align:center}
           <p class="lead">推しの違う三人が、<b>全キャラ分のグッズ</b>を作っています。絵を描き始めたばかりの二人と、描き続けてきた一人。推しへの愛による魔女化は、三人とも止まりません。</p>
           <div class="cta">
             <a class="btn primary" href="#menu">お品書きを見る</a>
+            <a class="btn" href="#survey">アンケートに答える</a>
             <a class="btn" href="#court">参加情報を見る</a>
             <a class="btn" href="#trial">推し診断をする</a>
           </div>
@@ -550,7 +560,7 @@ footer{padding-block:64px 64px;text-align:center}
         <div class="g"><span class="k">イベント</span><span class="v">異ノ祭</span><span class="st ok">確定</span></div>
         <div class="g"><span class="k">日時・会場・スペース</span><span class="v">―</span><span class="st tbd">未確定</span></div>
         <div class="g"><span class="k">頒布物</span><span class="v">オールキャラグッズ</span><span class="st ok">確定</span></div>
-        <div class="g"><span class="k">お品書き</span><span class="v">10品を掲載中</span><span class="st wip">イラスト制作中</span><a href="#menu">お品書きを見る</a></div>
+        <div class="g"><span class="k">お品書き</span><span class="v">10品を掲載中</span><span class="st wip">イラスト制作中</span><a href="#menu">お品書きを見る</a><a href="#survey">アンケート受付中（12/20まで）</a></div>
         <div class="g"><span class="k">お支払い</span><span class="v">―</span><span class="st tbd">未確定</span></div>
         <div class="g"><span class="k">対象年齢</span><span class="v">―</span><span class="st tbd">未確定</span></div>
         <div class="g"><span class="k">頒布状況</span><span class="v" id="glance-live">当日ここに表示</span><span class="st day" id="glance-live-st">当日更新</span></div>
@@ -576,6 +586,7 @@ footer{padding-block:64px 64px;text-align:center}
       </div>
       <ul class="news">
                 <li class="future"><span class="date">――.――.――</span><span class="body">スペース番号を掲載</span><span class="st tbd">未確定</span></li>
+        <li><span class="date">2026.10.27</span><span class="body"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdO4Pu8Uj4oFkTGdWQxTteyangVm3ulf_iT55jtBx5WYneb8g/viewform" target="_blank" rel="noopener">頒布物アンケート</a>を公開しました。12月20日（日）23:59まで受け付けています。</span><span class="st ok">受付中</span></li>
         <li><span class="date">2026.10.26</span><span class="body">頒布予定のグッズを<a href="#menu">お品書き</a>に掲載しました。イラストはすべて制作中です。</span><span class="st wip">イラスト制作中</span></li>
         <li><span class="date">2026.10.26</span><span class="body">サークル名が「Sinful Papilion」に決まりました。</span><span class="st ok">確定</span></li>
         <li><span class="date">2026.10.26</span><span class="body">紹介ページを公開しました。</span><span class="st ok">公開</span></li>
@@ -651,6 +662,18 @@ footer{padding-block:64px 64px;text-align:center}
         </div>
       </div>
       <div class="panels">
+        <div class="panel wide survey" id="survey">
+          <div class="survey-body">
+            <div class="survey-k">Survey</div>
+            <h3>どのグッズが欲しいか、教えてください</h3>
+            <p>制作数を決めるためのアンケートです。匿名で、3分ほどで答えられます。予約ではないので、回答しても購入の義務はありません。</p>
+            <ul>
+              <li>締め切り：<b>2026年12月20日（日）23:59</b></li>
+              <li>異ノ祭への参加は抽選結果しだいです（当落は11月下旬ごろ発表予定）。落選した場合は、通販の参考にします。</li>
+            </ul>
+          </div>
+          <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdO4Pu8Uj4oFkTGdWQxTteyangVm3ulf_iT55jtBx5WYneb8g/viewform" target="_blank" rel="noopener">アンケートに答える ↗</a>
+        </div>
         <div class="panel wide" id="menu">
           <h3>お品書き <small>Menu</small> <span class="st ok">公開</span></h3>
           <div class="wipband" role="note">
@@ -1017,6 +1040,7 @@ footer{padding-block:64px 64px;text-align:center}
       <div class="faq">
         <details open><summary>自分の推しのグッズはありますか。</summary><div class="ans"><span>全キャラ向けのトートバッグとステッカーを予定しています。お品書きの「推しで探す」で、推しごとのグッズも探せます。イラストはすべて制作中です。</span><span class="st wip">イラスト制作中</span></div></details>
         <details><summary>ナノマゴのグッズはありますか。</summary><div class="ans"><span>フリフリアクリルキーホルダーに、ナノマゴを予定しています。</span><span class="st wip">イラスト制作中</span></div></details>
+        <details><summary>欲しいグッズを伝える方法はありますか。</summary><div class="ans"><span><a href="https://docs.google.com/forms/d/e/1FAIpQLSdO4Pu8Uj4oFkTGdWQxTteyangVm3ulf_iT55jtBx5WYneb8g/viewform" target="_blank" rel="noopener">頒布物アンケート</a>で受け付けています。締め切りは12月20日（日）23:59です。</span><span class="st ok">受付中</span></div></details>
         <details><summary>キャッシュレス決済は使えますか。</summary><div class="ans"><span>決まりしだい、参加情報に掲載します。</span><span class="st tbd">未確定</span></div></details>
         <details><summary>取り置きや通販はありますか。</summary><div class="ans"><span>どちらも検討中です。ルールの欄に掲載します。</span><span class="st tbd">未確定</span></div></details>
         <details><summary>ネタバレは含まれますか。</summary><div class="ans"><span>含まれる可能性があります。範囲は決まりしだい、ページ冒頭に掲載します。</span><span class="st tbd">未確定</span></div></details>
